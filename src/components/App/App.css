@@ -1,0 +1,14 @@
+.app {
+  font-family: 'Inter', Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background: #202020;
+  color: #FFF;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}

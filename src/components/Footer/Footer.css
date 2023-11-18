@@ -1,0 +1,85 @@
+.footer {
+  padding: 79px 70px 0;
+}
+
+.footer__text {
+  margin: 0;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  text-align: center;
+  color: #8B8B8B;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #424242;
+}
+
+.footer__copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+.footer__year {
+  margin: 20px 0;
+  color: #FFF;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.footer__link {
+  text-decoration: none;
+  margin-left: 20px;
+  color: #FFF;
+  text-align: right;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 79px 30px 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .footer {
+    padding: 79px 10px 0;
+  }
+
+  .footer__text {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .footer__copyright {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    line-height: 15px;
+  }
+
+  .footer__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 13px;
+  }
+
+  .footer__link {
+    margin-left: 0;
+    line-height: 15px;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer__link:hover {
+    opacity: .7;
+    cursor: pointer;
+  }
+}

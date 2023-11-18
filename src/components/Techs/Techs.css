@@ -1,0 +1,140 @@
+
+.techs {
+  padding: 100px 70px;
+  background:  #272727;
+}
+
+.techs__title {
+  padding-bottom: 23px;
+  margin: 0;
+  line-height: 27px;
+  letter-spacing: -0.88px;
+  font-weight: 400;
+  font-size: 22px;
+  border-bottom: 1px solid #DADADA;/*  #000; */
+}
+
+.techs__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 90px;
+  margin-bottom: 100px;
+}
+
+.techs__subtitle {
+  margin: 0;
+  margin-bottom: 26px;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 58px;
+  text-align: center;
+  letter-spacing: -2px;
+}
+
+.techs__text {
+  margin: 0;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -0.56px;
+  max-width: 460px;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.techs__lists {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  letter-spacing: -0.56px;
+}
+
+.techs__list {
+  width: 90px;
+  padding: 21px 0 22px;
+  text-align: center;
+  border-radius: 10px;
+  background: #303030;
+}
+
+@media screen and (max-width: 768px) {
+  .techs {
+    padding: 90px 50px;
+  }
+
+  .techs__container {
+    margin-top: 80px;
+    margin-bottom: 83px;
+  }
+
+  .techs__subtitle {
+    margin-bottom: 22px;
+  }
+
+  .techs__text {
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.48px;
+  }
+
+  .techs__list {
+    width: 84px;
+    padding: 21px 0;
+  }
+
+  .techs__lists {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .techs {
+    padding: 70px 18px;
+    background: #202020;
+  }
+
+  .techs__title {
+    font-size: 18px;
+    line-height: 22px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid #000;
+    letter-spacing: -0.72px;
+  }
+
+  .techs__subtitle {
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 24px;
+    letter-spacing: -1.2px;
+  }
+
+  .techs__container {
+    margin: 60px 0 50px;
+  }
+
+  .techs__text {
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: -0.44px;
+  }
+
+  .techs__lists {
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: -0.48px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(84px, 84px));
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .techs__lists {
+    grid-template-columns: min-content min-content;
+  }
+}

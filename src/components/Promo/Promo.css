@@ -1,0 +1,132 @@
+.promo {
+  padding: 75px 70px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: #073042;
+}
+
+.promo__container {
+  width: 640px;
+  display: flex;
+  flex-direction: column;
+}
+
+.promo__title {
+  margin: 0;
+  margin-bottom: 36px;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 116%;
+}
+
+.promo__subtitle {
+  margin: 0;
+  margin-bottom: 146px;
+  max-width: 310px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  opacity: 0.5;
+}
+
+.promo__button {
+  padding: 10px 0;
+  width: 129px;
+  min-height: 36px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  color: #FFF;
+  display: block;
+  border-radius: 3px;
+  border: 1px solid #FFF;
+  box-sizing: border-box;
+  transition: opacity .6s linear;
+}
+
+.promo__logo {
+  width: 310px;
+  height: 304px;
+  background-image: url(../../images/promo__logo.png);
+  background-size: cover;
+  margin-bottom: 48px;
+}
+
+@media screen and (max-width:1080px) {
+  .promo__container {
+    max-width: 455px;
+  }
+}
+
+@media screen and (max-width:880px) {
+  .promo {
+    padding: 140px 44px 76px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .promo__container {
+    align-items: center;
+    text-align: center;
+    max-width: 680px;
+    width: 100%;
+    order: 2;
+  }
+
+  .promo__title {
+    margin-bottom: 22px;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 125%;
+    width: 100%;
+  }
+
+  .promo__subtitle {
+    margin-bottom: 92px;
+    max-width: 260px;
+  }
+}
+
+@media screen and (max-width:680px) {
+  .promo {
+    padding: 70px 0 30px;
+  }
+
+  .promo__container {
+    width: 84%;
+  }
+}
+
+@media screen and (max-width:450px) {
+  .promo__container {
+    width: 300px;
+  }
+
+  .promo__title {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 38px;
+    letter-spacing: -1.2px;
+    margin-bottom: 24px;
+  }
+
+  .promo__subtitle {
+    margin-bottom: 80px;
+  }
+
+  .promo__logo {
+    width: 210px;
+    height: 206px;
+    margin-bottom: 44px;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .promo__button:hover {
+    opacity: .7;
+    cursor: pointer;
+  }
+}
