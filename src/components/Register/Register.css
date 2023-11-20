@@ -44,7 +44,7 @@
 
 .register__input {
   font-size: 13px;
-  line-height: 46px;
+  line-height: 44px;
   border: 1px solid  #2F2F2F;
   background-color:  #2F2F2F;
   border-radius: 8px;
@@ -58,7 +58,7 @@
 }
 
 .register__input:focus {
-  outline: 0.2px solid  #2F2F2F;
+  outline: 0.2px solid  #4285F4;
 }
 
 .register__input_type_error {
@@ -100,6 +100,7 @@
   text-decoration: none;
   transition: .2s;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 .register__link-way {
@@ -124,20 +125,22 @@
   }
 
   .register__title {
-      text-align: center;
-      margin: 50px auto 60px auto;
-      max-width: 238px;
+    text-align: center;
+    margin: 50px auto 60px auto;
+    max-width: 238px;
   }
 
   .register__button {
-      font-size: 12px;
-      line-height: 15px;
-      font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+    margin-top: 157px;
+    margin-bottom: 14px;
   }
 
   .register__link {
-      font-size: 12px;
-      line-height: 15px;
+    font-size: 12px;
+    line-height: 15px;
   }
 }
 

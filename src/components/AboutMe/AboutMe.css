@@ -45,10 +45,9 @@
 }
 
 .aboutme__description-photo {
-  max-width: 270px;
-  height: auto;
+  width: 270px;
+  height: 327px;
   margin-top: 66px;
-  max-height: 327px;
 }
 
 .aboutme__link {
@@ -56,8 +55,9 @@
   transition: all 0.2s linear;
   font-size: 14px;
   font-weight: 500;
-  line-height: 17px;
+  line-height: normal;
   color: #FFF;
+  margin-bottom: 1px;
 }
 
 @media (hover: hover) {
@@ -75,6 +75,7 @@
   .aboutme__description-name {
     font-size: 40px;
     line-height: 40px;
+    letter-spacing: -1.6px;
   }
 
   .aboutme__description-job {
@@ -114,10 +115,12 @@
   .aboutme__description-photo {
     width: 100%;
     max-width: 292px;
-    height: auto;
+    min-height: 352px;
     margin-top: 60px;
     border-radius: 10px;
     object-fit: cover;
+    display: flex;
+    justify-content: center;
   }
 
   .aboutme__description-name {
@@ -152,10 +155,19 @@
     padding: 0 0 28px;
     margin:0;
     font-size: 18px;
+    line-height: 22px;
     letter-spacing: -0.72px;
   }
 
   .aboutme__img {
     width:  calc(100vw - 28px);
+  }
+
+  .aboutme__description-name {
+    letter-spacing: -1.2px;
+  }
+
+  .aboutme__link {
+    margin-bottom: 0;
   }
 }

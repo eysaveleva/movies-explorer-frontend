@@ -1,6 +1,6 @@
 .movies {
   padding: 0 70px;
-  min-height: calc(100vh - 268px);
+  min-height: calc(100vh - 246px);
   display: flex;
   flex-direction: column;
 }

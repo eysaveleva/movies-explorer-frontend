@@ -7,7 +7,7 @@ export default function Login() {
     <div className='login'>
       <form className='login__form'>
         <Link to="/" title="На главную" className="login__logo" />
-        <h2 className='login__title'>Рады видеть!</h2>
+        <h1 className='login__title'>Рады видеть!</h1>
         <label className="login__input-label">E-mail</label>
         <input
           name="Email"
@@ -32,7 +32,7 @@ export default function Login() {
         />
         <span className="login__input-error" id="login__input-error"> </span>
         <button type="submit" className='login__button'>Войти</button>
-        <p className='login__link'>Еще не зарегистрированы? <Link className='login__link-way' to='/signup'>Войти</Link></p>
+        <p className='login__link'>Еще не зарегистрированы? <Link className='login__link-way' to='/signup'>Регистрация</Link></p>
       </form>
     </div>
   )

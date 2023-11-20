@@ -3,6 +3,8 @@
   align-self: flex-start;
   cursor: pointer;
   transition: opacity .3s linear;
+  margin-top: 6px;
+  max-height: 20px;
 }
 
 .search__input-container {
@@ -56,6 +58,7 @@
   .search__label-container {
     align-self: flex-end;
     flex-direction: row-reverse;
+    margin-top: 3px;
   }
 
   .search__text {
@@ -67,6 +70,9 @@
 @media screen and (max-width: 450px) {
   .search__label-container {
     align-self: center;
+    justify-content: center;
+    margin-top: 12px;
+    margin-bottom: 2px;
   }
 
   .search__text {

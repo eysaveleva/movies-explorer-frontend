@@ -17,11 +17,11 @@ export default function MoviesCard({ name, src, link, duration }) {
     <li className="card">
       <article>
         <Link to={link} target="_blank">
-          <img className="card__image" src={src} alt="#"/>
+          <img className="card__image" src={src} alt={name}/>
         </Link>
         <div className="card__container">
           <div className="card__text-group">
-            <p className="card__subtitle">{name}</p>
+            <h2 className="card__subtitle">{name}</h2>
             <span className="card__duration">{duration}</span>
           </div>
           {pathname === '/movies' ?

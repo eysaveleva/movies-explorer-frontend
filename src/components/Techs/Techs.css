@@ -44,6 +44,7 @@
 
 .techs__lists {
   display: flex;
+  list-style: none;
   justify-content: center;
   gap: 10px;
   font-weight: 400;
@@ -51,6 +52,8 @@
   line-height: 17px;
   text-align: center;
   letter-spacing: -0.56px;
+  padding: 0;
+  margin: 0;
 }
 
 .techs__list {

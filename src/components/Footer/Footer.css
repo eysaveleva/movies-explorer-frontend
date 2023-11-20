@@ -26,10 +26,12 @@
   font-size: 13px;
   font-style: normal;
   font-weight: 400;
+  line-height: 16px;
 }
 
 .footer__link {
   text-decoration: none;
+  list-style: none;
   margin-left: 20px;
   color: #FFF;
   text-align: right;
@@ -62,6 +64,7 @@
     align-items: center;
     gap: 10px;
     line-height: 15px;
+    min-height: 56px;
   }
 
   .footer__links {
@@ -69,10 +72,18 @@
     flex-direction: column;
     align-items: center;
     gap: 13px;
+    list-style: none;
   }
 
   .footer__link {
     margin-left: 0;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .footer__year {
+    font-size: 12px;
+    color: #8B8B8B;
     line-height: 15px;
   }
 }

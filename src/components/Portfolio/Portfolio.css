@@ -11,13 +11,15 @@
 }
 
 .portfolio__links {
-  display: flex;
-  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .portfolio__link {
-  text-decoration: none;
   display: flex;
+  text-decoration: none;
+  list-style: none;
   justify-content: space-between;
   border-bottom: 1px solid #424242;
 }
@@ -38,7 +40,8 @@
   padding: 20px 6px 0;
 }
 
-.portfolio__link:last-child {
+
+.portfolio__link_type_last {
   border-bottom: none;
   margin-bottom: 1px;
 }
@@ -54,6 +57,13 @@
 
   .portfolio__link {
     border-bottom: 1px solid #E6E6E6;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .portfolio__link_type_last {
+    border-bottom: none;
+    margin-bottom: 1px;
   }
 
   .portfolio__title {
@@ -73,7 +83,7 @@
   .portfolio__link-img {
     width: 12px;
     height: 28px;
-    padding: 20px 3px 19px;
+    padding: 19px 3px 20px;
   }
 
   .portfolio__link-name {
@@ -85,6 +95,7 @@
   .portfolio__title {
     margin-bottom: 20px;
     font-size: 14px;
+    line-height: 21px;
   }
 
 }

@@ -7,11 +7,35 @@ export default function Profile() {
     <section className="profile">
       <h1 className="profile__title">Привет, Виталий!</h1>
       <form className="profile__form">
-        <label className="profile__label">Имя<input minLength="2" disabled className="profile__input" type="text" defaultValue="Виталий" /></label>
-        <label className="profile__label">E-mail<input minLength="2" disabled className="profile__input" type="text" defaultValue="pochta@yandex.ru" /></label>
-        <button className="profile__button">Редактировать</button>
+        <div className="profile__info">
+          <label className="profile__label">Имя</label>
+          <input
+              minLength="6"
+              placeholder="Имя"
+              maxLength="40"
+              disabled
+              className="profile__input"
+              type="text"
+              defaultValue="Виталий"
+              required
+              />
+        </div>
+        <div className="profile__info profile__info_type_last">
+          <label className="profile__label">E-mail</label>
+          <input
+            minLength="6"
+            placeholder="Пароль"
+            maxLength="40"
+            disabled
+            className="profile__input"
+            type="text"
+            defaultValue="pochta@yandex.ru"
+            required
+            />
+          </div>
+        <button className="profile__button" type="submit">Редактировать</button>
+        <Link to="/" className="profile__button profile__button_log-out">Выйти из аккаунта</Link>
       </form>
-      <Link to="/" className="profile__button profile__button_log-out">Выйти из аккаунта</Link>
     </section>
   )
 }

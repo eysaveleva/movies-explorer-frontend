@@ -32,7 +32,7 @@
   font-size: 12px;
   line-height: 16px;
   margin: 0;
-  margin-left: 50px;
+  margin-left: 30px;
   text-decoration: none;
   color: #FFF;
   transition: opacity .3s linear;
@@ -79,9 +79,10 @@
   font-weight: 500;
   line-height: 12px;
   margin-left: calc(364/1102*100%);
-  padding-left: 11px;
   min-width: 100px;
+  justify-content: flex-end;
 }
+
 
 .header__link_active {
   font-weight: 500;
@@ -224,11 +225,17 @@
     font-size: 10px;
   }
 
+  .header__signin {
+    padding: 5px 12px;
+  }
+
   .header__burger {
     background-image: url('../../images/burger_320.svg');
     width: 40px;
     height: 43px;
     margin-top: 15px;
+    padding-left: 2px;
+    padding-right: 2px;
   }
 
   .header__link {

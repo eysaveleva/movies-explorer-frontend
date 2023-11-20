@@ -29,10 +29,10 @@ export default function Header({ loggedIn, theme }) {
       {!loggedIn ? (
         <header className={`header ${theme === 1? 'header_type_light' : ''}`}>
         <Link className="header__logo" to="/"></Link>
-        <div className="header__container">
+        <nav className="header__container">
           <Link className="header__sign header__signup" to="/signup">Регистрация</Link>
           <Link className="header__sign header__signin" to="/signin">Войти</Link>
-        </div>
+        </nav>
         </header>
       ) : (
         <header className="header">

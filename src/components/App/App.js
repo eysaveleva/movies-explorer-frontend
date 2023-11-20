@@ -32,7 +32,7 @@ function App() {
       ) : (
         ''
       )}
-      <main>
+      <main className="main">
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/signup" element={<Register />} />

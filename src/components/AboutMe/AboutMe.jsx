@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './AboutMe.css';
-import avatar from '../../images/avatar.svg';
+import avatar from '../../images/avatar.png';
 
 export default function AboutMe() {
   return (
     <section className="aboutme" id="aboutme">
-      <h3 className="aboutme__title">Студент</h3>
+      <h2 className="aboutme__title">Студент</h2>
       <div className="aboutme__container">
         <div className="aboutme__description">
-          <p className="aboutme__description-name">Виталий</p>
+          <h3 className="aboutme__description-name">Виталий</h3>
           <p className="aboutme__description-job">Фронтенд-разработчик, 30 лет</p>
           <p className="aboutme__description-text">
             Я родился и живу в Саратове, закончил факультет экономики СГУ. У
@@ -20,9 +20,7 @@ export default function AboutMe() {
           </p>
           <Link className="aboutme__link" to={'https://github.com/eysaveleva'} target='_blank'>Github</Link>
         </div>
-        <div className="aboutme__img">
-          <img className="aboutme__description-photo" src={avatar} alt="#"/>
-        </div>
+          <img className="aboutme__description-photo" src={avatar} alt="Моё фото"/>
       </div>
     </section>
   );

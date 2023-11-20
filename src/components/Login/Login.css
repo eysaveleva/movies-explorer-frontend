@@ -44,7 +44,7 @@
 
 .login__input {
   font-size: 13px;
-  line-height: 46px;
+  line-height: 44px;
   border: 1px solid  #2F2F2F;
   background-color:  #2F2F2F;
   border-radius: 8px;
@@ -58,12 +58,8 @@
 }
 
 .login__input:focus {
-  outline: 0.2px solid  #2F2F2F;
+  outline: 0.2px solid  #4285F4;
 }
-
-/* .login__input_type_error {
-  color: #EE3465;
-} */
 
 .login__input-error {
   min-height: 12px;
@@ -83,12 +79,12 @@
   line-height: 17px;
   outline: none;
   margin-bottom: 16px;
-  margin-top: 245px;
   background-color:  #4285F4;
   color: #fff;
   border: none;
   border-radius: 3px;
   transition: .2s;
+  margin-top: 157px;
 }
 
 .login__link {
@@ -100,6 +96,7 @@
   text-decoration: none;
   transition: .2s;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 .login__link-way {
@@ -107,6 +104,7 @@
   text-decoration: none;
   padding-left: 6px;
 }
+
 @media screen and (max-width: 850px) {
   .login__form {
     margin-top: 232px;
@@ -124,20 +122,23 @@
   }
 
   .login__title {
-      text-align: center;
-      margin: 50px auto 60px auto;
-      max-width: 238px;
+    text-align: center;
+    margin: 50px auto 60px auto;
+    max-width: 238px;
   }
 
   .login__button {
-      font-size: 12px;
-      line-height: 15px;
-      font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+    margin-top: 245px;
+    margin-bottom: 14px;
   }
 
   .login__link {
-      font-size: 12px;
-      line-height: 15px;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 30px;
   }
 }
 

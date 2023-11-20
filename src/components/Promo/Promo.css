@@ -31,7 +31,7 @@
 }
 
 .promo__button {
-  padding: 10px 0;
+  padding: 9px 0;
   width: 129px;
   min-height: 36px;
   text-decoration: none;
@@ -50,7 +50,7 @@
 .promo__logo {
   width: 310px;
   height: 304px;
-  background-image: url(../../images/promo__logo.png);
+  background-image: url(../../images/promo__logo.svg);
   background-size: cover;
   margin-bottom: 48px;
 }

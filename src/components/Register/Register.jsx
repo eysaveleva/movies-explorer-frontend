@@ -7,7 +7,7 @@ export default function Register() {
     <div className='register'>
       <form className='register__form'>
         <Link to="/" title="На главную" className="register__logo" />
-        <h2 className='register__title'>Добро пожаловать!</h2>
+        <h1 className='register__title'>Добро пожаловать!</h1>
         <label className="register__input-label">Имя</label>
         <input
           name="Name"

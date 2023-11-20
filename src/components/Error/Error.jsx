@@ -6,7 +6,7 @@ export default function Error() {
   return (
     <section className='error'>
       <div className='error__container'>
-        <h2 className='error__title'>404</h2>
+        <h1 className='error__title'>404</h1>
         <p className='error__text'>Страница не найдена</p>
         <Link onClick={() => navigate(-1)} className='error__link'>Назад</Link>
       </div>

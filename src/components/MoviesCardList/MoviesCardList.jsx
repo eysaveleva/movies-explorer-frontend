@@ -32,7 +32,7 @@ export default function MoviesCardList({ movies }) {
           )
         })}
       </ul>
-      <button className={`movies__button ${count >= movies.length && "movies__button_hidden"}`} type="button" onClick={clickMore}>Ёще</button>
+      <button className={`movies-section__button ${count >= movies.length && "movies-section__button_hidden"}`} type="button" onClick={clickMore}>Ещё</button>
     </section>
   )
 }
