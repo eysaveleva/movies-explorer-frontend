@@ -1,0 +1,128 @@
+.profile {
+  margin: 0 auto;
+  padding-bottom: 62px;
+  padding-top: 74px;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile__title {
+  margin: 0 0 106px;
+  max-width: 80%;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.profile__form {
+  width: 410px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile__info {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #424242;
+}
+
+.profile__input {
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 14px;
+  width: 67%;
+  text-align: right;
+  background-color: transparent;
+  padding: 17px 0;
+  border: 0;
+  color: #FFF;
+}
+
+.profile__label {
+  padding: 16px 0;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 14px;
+  width: 34%;
+}
+
+.profile__info_type_last {
+  border: 0;
+}
+
+.profile__button {
+  padding: 8px 0;
+  width: 100%;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  text-decoration: none;
+  background-color: transparent;
+  border: 0;
+  color: #FFF;
+  margin-top: 195px;
+}
+
+.profile__button_log-out {
+  color:#EE3465;
+  font-weight: 500;
+  margin-top: 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 850px) {
+  .profile {
+    padding-bottom: 261px;
+    padding-top: 236px;
+  }
+
+  .profile__title {
+    margin: 0 0 78px;
+  }
+
+  .profile__button {
+  margin-top: 186px;
+  }
+
+  .profile__button_log-out {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .profile {
+    padding: 70px 30px 32px;
+  }
+
+  .profile__title {
+    margin: 0 0 63px;
+  }
+
+  .profile__form {
+    width: 260px;
+  }
+  .profile__button {
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 354px;
+  }
+
+  .profile__button_log-out {
+    margin-top: 0;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .profile__button:hover {
+    opacity: .8;
+    cursor: pointer;
+  }
+}
