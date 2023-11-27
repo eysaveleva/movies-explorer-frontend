@@ -125,7 +125,7 @@ return this._request(`${this._baseUrl}/users/me`, {
 }
 
 const mainApi = new MainApi({
-  baseUrl:  'api.diplom.eysaveleva.nomoredomainsrocks.ru', //'http://localhost:3000', //
+  baseUrl:  'https://api.diplom.eysaveleva.nomoredomainsrocks.ru', //'http://localhost:3000', //
 });
 
 export default mainApi;
