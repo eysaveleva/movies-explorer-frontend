@@ -1,30 +1,32 @@
-import { useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import './MoviesCardList.css';
+import useResize from '../../hooks/useResize.js';
+
+import { Step, StepLitle, StepBig, Width, WidthLitle, WidthBig, CardsToRendMax, CardsToRend, CardsToRendLess, CardsToRendMin } from '../../utils/const';
 
 export default function MoviesCardList({ movies, savedMovies, addMovie, removeMovie }) {
-  const [count, setCount] = useState(printCards().init);
   const { pathname } = useLocation();
-  const fact = movies.slice(0, count);
+  let size = useResize();
+  const [moviesToAdd, setMoviesToAdd] = useState(0);
 
-  function printCards() {
-    const counter = { init: 16, step: 4}
-    if (window.innerWidth  <= 850) {
-      counter.init = 8
-      counter.step = 2
-    }
-    if (window.innerWidth <= 450) {
-      counter.init = 5
-      counter.step = 2
-    }
-    return counter;
-  }
+  useEffect(() => {
+    setMoviesToAdd(0);
+  }, [movies]);
 
-  function clickMore() {
-    setCount(count + printCards().step)
-  }
-
+  const fact = useMemo(() => {
+    const countToRender = size.width < WidthLitle ?
+                            CardsToRendMin :
+                            (size.width < Width ?
+                              CardsToRendLess :
+                              (size.width < WidthBig ?
+                                CardsToRend :
+                                CardsToRendMax
+                              )
+                            );
+    return movies.slice(0, countToRender + moviesToAdd);
+  }, [movies, moviesToAdd, size]);
 
   return (
     <section className="movies-section">
@@ -55,7 +57,14 @@ export default function MoviesCardList({ movies, savedMovies, addMovie, removeMo
           })
       }
       </ul>
-      {pathname === '/movies' && <button className={`movies-section__button ${count >= movies.length && "movies-section__button_hidden"}`} type="button" onClick={clickMore}>Ещё</button>
+      {pathname === '/movies' &&  movies.length > fact.length &&
+        (<button className={"movies-section__button"}
+          type="button"
+            onClick={() => {
+              setMoviesToAdd((prev) => prev + (size.width < Width ? StepLitle : (size.width < WidthBig ? Step : StepBig)));
+            }}>
+            Ещё
+        </button>)
       }</section>
   )
 }

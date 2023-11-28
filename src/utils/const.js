@@ -1,4 +1,17 @@
 import img from '../images/preload.png';
+export const ShortDuration = 40;
+
+export const Step = 3;
+export const StepLitle = 2;
+export const StepBig = 4;
+export const Width = 1024;
+export const WidthLitle = 768;
+export const WidthBig = 1280;
+export const CardsToRendMax = 16;
+export const CardsToRend = 12;
+export const CardsToRendLess = 8;
+export const CardsToRendMin = 5;
+
 export const beatfilm_URL = 'https://api.nomoreparties.co';
 export const moviesData = [
   {

@@ -15,8 +15,9 @@ export default function SearchForm({ searchedText, searchMovies, savedMovies, is
     } else {
       reset({ search: searchedText })
     }
-    setIsError(false)
+    setIsError(false);
   }, [searchedText, reset, setIsError, pathname, savedMovies])
+
 
   function handleSubmit(evt) {
     evt.preventDefault()
@@ -33,7 +34,7 @@ export default function SearchForm({ searchedText, searchMovies, savedMovies, is
       <div className='search__container'>
         <form className='search__form' noValidate onSubmit={handleSubmit}>
           <div className='search__line'>
-            <input className='search__input'
+            <input  className='search__input'
               type="text"
               minLength={2}
               maxLength={40}

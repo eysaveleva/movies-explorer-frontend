@@ -177,3 +177,8 @@
     cursor: pointer;
   }
 }
+
+.register__button_disabled {
+  opacity: 0.8;
+  background-color: #8B8B8B;
+}

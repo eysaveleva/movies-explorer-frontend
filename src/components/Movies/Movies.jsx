@@ -4,26 +4,26 @@ import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Preloader from '../Preloader/Preloader';
 import moviesApi from '../../utils/MoviesApi';
+import { ShortDuration } from '../../utils/const';
 
-export default function Movies({ savedMovies, addMovie, removeMovie }) {
+export default function Movies({ savedMovies, addMovie, removeMovie,setIsError, isError }) {
   const [isLoading, setIsLoading] = useState(false);
   const [filteredMovies, setFilteredMovies] = useState([]);
   const [movies, setMovies] = useState([]);
-  const [isError, setIsError] = useState(false);
+  const [isErrorAnswerServer, setIsErrorAnswerServer] = useState(false);
   const [newEntrance, setNewEntrance] = useState(true);
-  const [statusCheckBox, setStatusCheckBox] = useState(false); //useState(JSON.parse(localStorage.getItem('statusCheckBoxin')));
-  const [searchedText, setSearchedText] = useState('') ;//useState(JSON.parse(localStorage.getItem('searchedTextin')) || '');
+  const [searchedText, setSearchedText] = useState('') ;
 
+  const [statusCheckBox, setStatusCheckBox] = useState(false);
 
   const savedSearchData = useCallback((text, checkbox, witchmovies) => {
     setSearchedText(text);
     localStorage.setItem('searchedTextin', JSON.stringify(text));
     localStorage.setItem('statusCheckBoxin', JSON.stringify(checkbox));
     localStorage.setItem('searchedMoviesin', JSON.stringify(witchmovies));
-
     const filtered = witchmovies.filter((movie) => {
     const searchName = movie.nameRU.toLowerCase().trim().includes(text.toLowerCase());
-    return checkbox ? (searchName && movie.duration <= 40) : searchName;})
+    return checkbox ? (searchName && movie.duration <= ShortDuration) : searchName;})
     setFilteredMovies(filtered);
     localStorage.setItem('searchedMoviesin', JSON.stringify(filtered));
 
@@ -35,13 +35,12 @@ export default function Movies({ savedMovies, addMovie, removeMovie }) {
       moviesApi.getMovies()
         .then((res) => {
           setMovies(res);
-          setStatusCheckBox(false);
-          setIsError(false);
+          setIsErrorAnswerServer(false);
           setNewEntrance(false);
           savedSearchData(text, statusCheckBox, res);
         })
         .catch(err => {
-          setIsError(true)
+          setIsErrorAnswerServer(true);
           console.error(`Ошибка при поиске фильмов ${err}`)
         })
         .finally(() => setIsLoading(false))
@@ -59,7 +58,7 @@ export default function Movies({ savedMovies, addMovie, removeMovie }) {
       setFilteredMovies(witchmovies);
       setSearchedText(text);
       setStatusCheckBox(checkbox);
-      setIsError(false);
+      setIsErrorAnswerServer(false);
       setNewEntrance(false);
       savedSearchData(text, checkbox, witchmovies);
     }
@@ -67,13 +66,14 @@ export default function Movies({ savedMovies, addMovie, removeMovie }) {
 
    function changeShort() {
     if (statusCheckBox) {
+      localStorage.setItem('statusCheckBoxin', JSON.stringify(false));
       setStatusCheckBox(false);
       savedSearchData(searchedText, false, movies);
-      localStorage.setItem('statusCheckBoxin', JSON.stringify(false));
+
     } else {
+      localStorage.setItem('statusCheckBoxin', JSON.stringify(true));
       setStatusCheckBox(true);
       savedSearchData(searchedText, true, movies);
-      localStorage.setItem('statusCheckBoxin', JSON.stringify(true));
     }
   }
 
@@ -88,7 +88,7 @@ export default function Movies({ savedMovies, addMovie, removeMovie }) {
         searchedText={searchedText}
         savedMovies={savedMovies}
       />
-      {isError ? (
+      {isErrorAnswerServer ? (
         <span className='movies movies_not-found'>
           Во время запроса произошла ошибка.
           Возможно, проблема с соединением или сервер недоступен.
@@ -115,4 +115,3 @@ export default function Movies({ savedMovies, addMovie, removeMovie }) {
     </section>
   );
 }
-

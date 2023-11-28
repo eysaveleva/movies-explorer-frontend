@@ -75,57 +75,56 @@ class MainApi {
   })
 }
 
-removeMovie(cardId, token) {
-  return this._request(`${this._cardsUrl}/${cardId}`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`,
-    },
-  })
-}
-
-registration (name, email, password)  {
-return this._request(`${this._baseUrl}/signup`, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    name: name,
-    email: email,
-    password: password })
-})
-};
-
-login (email, password)  {
-return this._request(`${this._baseUrl}/signin`, {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      email: email,
-      password: password })
-})
-};
-
-checkToken (token)  {
-return this._request(`${this._baseUrl}/users/me`, {
-  method: 'GET',
-  headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${token}`,
-
+  removeMovie(cardId, token) {
+    return this._request(`${this._cardsUrl}/${cardId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+    })
   }
-})
-};
+
+  registration (name, email, password)  {
+    return this._request(`${this._baseUrl}/signup`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        password: password })
+    })
+  };
+
+  login (email, password)  {
+    return this._request(`${this._baseUrl}/signin`, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password })
+    })
+  };
+
+  checkToken (token)  {
+    return this._request(`${this._baseUrl}/users/me`, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      }
+    })
+  };
 }
 
 const mainApi = new MainApi({
-  baseUrl:  'https://api.diplom.eysaveleva.nomoredomainsrocks.ru', //'http://localhost:3000', //
+  baseUrl:  'http://localhost:3000', //'https://api.diplom.eysaveleva.nomoredomainsrocks.ru', //
 });
 
 export default mainApi;

@@ -40,16 +40,19 @@ function App() {
 
   useEffect(() => {
     if (localStorage.jwt) {
+
       Promise.all([mainApi.getUserData(localStorage.jwt), mainApi.getSavedMovies(localStorage.jwt)])
         .then(([userData , dataMovies ]) => {
           setCurrentUser(userData);
           setLoggedIn(true);
+
           setIsLoading(false);
           setSavedMovies(dataMovies.reverse());
         })
         .catch((error) => {
           console.error(`Ошибка при загрузке данных ${error}`)
           setIsLoading(false);
+
           localStorage.clear();
         })
 
@@ -61,7 +64,6 @@ function App() {
   }, [loggedIn])
 
   function handleRegister(name, email, password) {
-    setIsLoading(true);
     mainApi.registration(name, email, password)
       .then((res) => {
         if (res) {
@@ -73,14 +75,12 @@ function App() {
         setIsError(true);
         console.error(`Ошибка при регистрации ${err}`)
       })
-      .finally(() => setIsLoading(false))
   }
 
   function handleLogin(email, password) {
-    setIsLoading(true);
     mainApi.login(email, password)
       .then(res => {
-        localStorage.setItem('jwt', res.token)
+        localStorage.setItem('jwt', res.token);
         setLoggedIn(true);
         navigate('/movies');
         setCurrentUser(res);
@@ -89,7 +89,6 @@ function App() {
         setIsError(true);
         console.error(`Ошибка при авторизации ${err}`)
       })
-      .finally(() => setIsLoading(false))
   }
 
   function handleSignOut() {
@@ -114,13 +113,11 @@ function App() {
   }
 
   function handleRemoveMovie(id) {
-    setIsLoading(true);
     mainApi.removeMovie(id, localStorage.jwt)
       .then(() => {
         setSavedMovies(savedMovies.filter(movie => { return movie._id !== id }))
       })
       .catch((err) => console.error(`Ошибка при удалении фильма ${err}`))
-      .finally(() => setIsLoading(false))
     }
 
    function handleAddMovie (movie, isLiked, id) {
@@ -131,7 +128,6 @@ function App() {
         mainApi
           .addMovie(movie, localStorage.jwt)
           .then((res) => {
-            //setSavedMovies([...savedMovies, res]);
             setSavedMovies([res, ...savedMovies]);
           })
           .catch((err) => console.error(`Ошибка при сохранении фильма ${err}`))
@@ -161,6 +157,7 @@ function App() {
                     onRegister={handleRegister}
                     setIsError={setIsError}
                     isError={isError}
+
                 />)
               }
             />
@@ -171,6 +168,7 @@ function App() {
                     onLogin={handleLogin}
                     setIsError={setIsError}
                     isError={isError}
+                    loggedIn={loggedIn}
                 />)
               }
             />

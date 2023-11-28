@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React  from 'react';
+import { Link  } from 'react-router-dom';
 import './Login.css';
 import useFormValidation from '../../hooks/useFormValidation';
 
-export default function Login({onLogin, setIsError, isError}) {
+export default function Login({onLogin, isLoggedIn, setIsError, isError}) {
   const { values, errors, isValid, handleChange } = useFormValidation();
 
   function handleSubmit(evt) {
@@ -21,7 +21,6 @@ export default function Login({onLogin, setIsError, isError}) {
           name="email"
           type="email"
           id="email"
-          //pattern={"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
           pattern = {"^\\S+@\\S+\\.\\S+$"}
           placeholder="Email"
           minLength="6"
@@ -59,7 +58,6 @@ export default function Login({onLogin, setIsError, isError}) {
           type="submit"
           className={`login__button ${!isValid ? 'login__button_disabled' : ""}`}
           disabled={!isValid}
-       //   onClick={handleSubmit}
           >
             Войти
         </button>

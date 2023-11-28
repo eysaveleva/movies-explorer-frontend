@@ -2,8 +2,7 @@ import './SavedMovies.css';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import { useCallback, useEffect, useState } from "react";
-//import Preloader from '../Preloader/Preloader';
-
+import { ShortDuration } from '../../utils/const';
 
 export default function SavedMovies({ savedMovies, addMovie, removeMovie }) {
 
@@ -16,7 +15,7 @@ export default function SavedMovies({ savedMovies, addMovie, removeMovie }) {
     setSearchedText(text);
     const filtered = witchmovies.filter((movie) => {
     const searchName = movie.nameRU.toLowerCase().trim().includes(text.toLowerCase());
-    return checkbox ? (searchName && movie.duration <= 40) : searchName;})
+    return checkbox ? (searchName && movie.duration <= ShortDuration) : searchName;})
     setFilteredMovies(filtered);
 
   }, [])

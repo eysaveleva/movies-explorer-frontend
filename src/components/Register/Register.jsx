@@ -37,7 +37,6 @@ export default function Register({onRegister, setIsError, isError}) {
           name="email"
           type="email"
           id="email"
-          //pattern={"[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"}
           pattern = {"^\\S+@\\S+\\.\\S+$"}
           placeholder="Email"
           minLength="6"
@@ -73,9 +72,8 @@ export default function Register({onRegister, setIsError, isError}) {
           }
         <button
           type="submit"
-          className={`login__button ${!isValid ? 'login__button_disabled' : ""}`}
+          className={`register__button ${!isValid ? 'register__button_disabled' : ""}`}
           disabled={!isValid}
-        //  onClick={handleSubmit}
           >
             Зарегистрироваться
         </button>
