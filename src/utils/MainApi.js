@@ -124,7 +124,7 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-  baseUrl:  'http://localhost:3000', //'https://api.diplom.eysaveleva.nomoredomainsrocks.ru', //
+  baseUrl:  'https://api.diplom.eysaveleva.nomoredomainsrocks.ru', //'http://localhost:3000', //
 });
 
 export default mainApi;
