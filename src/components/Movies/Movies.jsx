@@ -14,19 +14,19 @@ export default function Movies({ savedMovies, addMovie, removeMovie,setIsError, 
   const [newEntrance, setNewEntrance] = useState(true);
   const [searchedText, setSearchedText] = useState('') ;
 
-  const [statusCheckBox, setStatusCheckBox] = useState(false);
+  const [statusCheckBox, setStatusCheckBox] = useState(JSON.parse(localStorage.getItem('statusCheckBoxin')));
 
-  const savedSearchData = useCallback((text, checkbox, witchmovies) => {
+  const savedSearchData = useCallback((text, checkbox, bdmovies) => {
     setSearchedText(text);
     localStorage.setItem('searchedTextin', JSON.stringify(text));
     localStorage.setItem('statusCheckBoxin', JSON.stringify(checkbox));
-    localStorage.setItem('searchedMoviesin', JSON.stringify(witchmovies));
-    const filtered = witchmovies.filter((movie) => {
+    localStorage.setItem('searchedMoviesin', JSON.stringify(bdmovies));
+
+
+    const filtered = bdmovies.filter((movie) => {
     const searchName = movie.nameRU.toLowerCase().trim().includes(text.toLowerCase());
     return checkbox ? (searchName && movie.duration <= ShortDuration) : searchName;})
     setFilteredMovies(filtered);
-    localStorage.setItem('searchedMoviesin', JSON.stringify(filtered));
-
   }, [])
 
   function searchMovies(text) {
@@ -37,7 +37,9 @@ export default function Movies({ savedMovies, addMovie, removeMovie,setIsError, 
           setMovies(res);
           setIsErrorAnswerServer(false);
           setNewEntrance(false);
-          savedSearchData(text, statusCheckBox, res);
+          setStatusCheckBox(false);
+          savedSearchData(text, false, res);
+          localStorage.setItem('searchedMoviesin', JSON.stringify(movies));
         })
         .catch(err => {
           setIsErrorAnswerServer(true);
@@ -51,16 +53,15 @@ export default function Movies({ savedMovies, addMovie, removeMovie,setIsError, 
 
   useEffect(() => {
     if (localStorage.searchedMoviesin && localStorage.statusCheckBoxin && localStorage.searchedTextin) {
-      const witchmovies = JSON.parse(localStorage.searchedMoviesin);
+      const bdmovies = JSON.parse(localStorage.searchedMoviesin);
       const text = JSON.parse(localStorage.searchedTextin);
       const checkbox = JSON.parse(localStorage.statusCheckBoxin);
-
-      setFilteredMovies(witchmovies);
       setSearchedText(text);
       setStatusCheckBox(checkbox);
       setIsErrorAnswerServer(false);
       setNewEntrance(false);
-      savedSearchData(text, checkbox, witchmovies);
+      setMovies(bdmovies);
+      savedSearchData(text, checkbox, bdmovies);
     }
   }, [savedSearchData]);
 
